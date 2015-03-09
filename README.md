@@ -78,4 +78,5 @@ But this component can be compiled this component against all Solr versions from
 
 ## License
 Released under the Apache License, Version 2.0
+
 2015 search-solutions.net
