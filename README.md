@@ -5,33 +5,11 @@ https://www.search-solutions.net
 ## Purpose
 The purpose of this component is to store solr queries in the solr (server side) configuration.
 This hides solr query complexity for the clients and avoids the distribution of complex queries on client side.
-Goal is to keep complex queries on server side, providing easy implementation on client side with a simple API.
-This results in easier maintenance and upgrade of your solr index and implementation.
 
-This can also be achieved via the use of different requesthandlers that provide different default queries in the q-parameter.
-However, this approach has some disadvantages:
-- the client side is affected as this requires the use of explicit request handlers or the use of the &qt parameter
-- other components are affected: using a query in the q parameter affects the other components (e.g. highlighting and spellcheck component), 
-unless additional actions are taken (cf. setting spellcheck.q).
-- the default Solr Admin query client and the velocity client (/browse) are affected as q-value will per default be overridden 
-
-This ssq functionality keeps it simple by re-using the q parameter for search terms. 
-E.g. an entered query
-
-	/select?q=foo 
-
-will be executed under the hood as
- 
-	/select?q=<complex-query>&qq=foo 
-
-while keeping the default behavior for other components.
-The <complex-query> needs to be set up with a qq parameter for dereferencing 
-(see parameter dereferencing: https://cwiki.apache.org/confluence/display/solr/Local+Parameters+in+Queries) 
-
-This component enables the configuration of multiple server side query (ssq) templates. 
+See further info on https://www.search-solutions.net/en/blog/solr-server-side-query-templates.
 
 ## Installation
-1. Add jar file (solr-ssq-VERSION.jar found in '/target/' folder for Solr v5) in the "./lib" sub-directory of the Solr Home Directory (e.g. /solr-5.0.0/server/solr/collection1). For any other version solr version, generate your own jar.
+1. Add jar file (solr-ssq-VERSION.jar for Solr v5) in the "./lib" sub-directory of the Solr Home Directory (e.g. /solr-5.0.0/server/solr/collection1). For any other version solr version, generate your own jar.
 
 2. Add the following line in the solrconfig.xml to load the jar
 	  <lib dir="${solr.home.dir:}/lib/" regex="solr-ssq-\d.*\.jar" />
