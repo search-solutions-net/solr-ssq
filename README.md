@@ -31,7 +31,7 @@ The <complex-query> needs to be set up with a qq parameter for dereferencing
 This component enables the configuration of multiple server side query (ssq) templates. 
 
 ## Installation
-1. Add jar file (solr-ssq-VERSION.jar found in '/target/' folder for Solr v5) in the "./lib" sub-directory of the Solr Home Directory (e.g. ). For any other version solr version, generate your own jar.
+1. Add jar file (solr-ssq-VERSION.jar found in '/target/' folder for Solr v5) in the "./lib" sub-directory of the Solr Home Directory (e.g. /solr-5.0.0/server/solr/collection1). For any other version solr version, generate your own jar.
 
 2. Add the following line in the solrconfig.xml to load the jar
 	  <lib dir="${solr.home.dir:}/lib/" regex="solr-ssq-\d.*\.jar" />
