@@ -10,10 +10,10 @@ This results in easier maintenance and upgrade of your solr index and implementa
 
 This can also be achieved via the use of different requesthandlers that provide different default queries in the q-parameter.
 However, this approach has some disadvantages:
-- it affects the client side as this requires the use of explicit request handlers or the use of the &qt parameter
-- it affects other components: using a query in the q parameter affects the other components (e.g. highlighting and spellcheck component), 
+- the client side is affected as this requires the use of explicit request handlers or the use of the &qt parameter
+- other components are affected: using a query in the q parameter affects the other components (e.g. highlighting and spellcheck component), 
 unless additional actions are taken (cf. setting spellcheck.q).
-- it affects the default use in Solr Admin query client and in the velocity client (/browse) as q-value is overridden 
+- the default Solr Admin query client and the velocity client (/browse) are affected as q-value will per default be overridden 
 
 This ssq functionality keeps it simple by re-using the q parameter for search terms. 
 E.g. an entered query
