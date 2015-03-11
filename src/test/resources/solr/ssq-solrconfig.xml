@@ -45,8 +45,8 @@
       <str name="df">text</str>
       <str name="ssq">off</str>
       <str name="ssq.query">q1</str>
-      <str name="ssq.query.q1">{!field f=val1_s v=$qq}</str>
-      <str name="ssq.query.q2">{!field f=val2_s v=$qq}</str>
+      <str name="ssq.query.q1">_query_:{!field f=val1_s v=$qq}</str>
+      <str name="ssq.query.q2">_query_:{!field f=val2_s v=$qq}</str>
     </lst>
   </requestHandler>
       

@@ -64,7 +64,7 @@ public class SsqQueryComponentTest extends SolrTestCaseJ4 {
 		assertQ("Test default ssq.query (q1)", req("ABC"), "//*[@numFound='1']"
 	            ,"//result/doc[1]/str[@name='id'][.='1001']");
 		
-		lrf.args.put("ssq.query", "{!field f=val3_s v=$qq}");
+		lrf.args.put("ssq.query", "_query_:{!field f=val3_s v=$qq}");
 		assertQ("Test override ssq.query", req("ABC"), "//*[@numFound='1']"
 	            ,"//result/doc[1]/str[@name='id'][.='1003']");
 		
