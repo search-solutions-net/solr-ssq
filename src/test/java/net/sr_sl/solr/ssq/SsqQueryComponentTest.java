@@ -15,7 +15,7 @@
  * 
  */
 
-package net.sr_sl.solr.solr_ssq;
+package net.sr_sl.solr.ssq;
 
 import org.apache.solr.SolrTestCaseJ4;
 import org.junit.BeforeClass;

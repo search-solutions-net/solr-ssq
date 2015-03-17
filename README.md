@@ -15,7 +15,7 @@ See further info on https://www.search-solutions.net/en/blog/solr-server-side-qu
 	  <lib dir="${solr.home.dir:}/lib/" regex="solr-ssq-\d.*\.jar" />
 	  
 3. Add the following line in the solrconfig.xml to set the searchcomponent
-	  <searchComponent name="query" class="net.sr_sl.solr.solr_ssq.SsqQueryComponent" />
+	  <searchComponent name="query" class="net.sr_sl.solr.ssq.SsqQueryComponent" />
 	  
 4. Configure the parameters for requestHandler (optionally via initParams (in case of Solr 5.0)) e.g.
   1. Example with simple setup

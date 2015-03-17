@@ -6,7 +6,7 @@
 		</Console>
 	</Appenders>
 	<Loggers>
-		<Logger name="net.sr_sl.solr.solr_ssq.SsqQueryComponent" level="debug" />
+		<Logger name="net.sr_sl.solr" level="debug" />
 		<Root level="info">
 			<AppenderRef ref="Console" />
 		</Root>

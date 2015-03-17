@@ -58,7 +58,7 @@
 
   <requestHandler name="/update" class="solr.UpdateRequestHandler"  />
   
-  <searchComponent name="query" class="net.sr_sl.solr.solr_ssq.SsqQueryComponent" />
+  <searchComponent name="query" class="net.sr_sl.solr.ssq.SsqQueryComponent" />
   
   <queryResponseWriter name="standard" class="solr.XMLResponseWriter"/>
   <queryResponseWriter name="useless" class="org.apache.solr.OutputWriterTest$UselessOutputWriter" startup="lazy"/>
