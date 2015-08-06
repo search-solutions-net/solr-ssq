@@ -51,13 +51,16 @@ See further info on https://www.search-solutions.net/en/blog/solr-server-side-qu
 
     ```
     /select?q=foo
-		--> /select?q={!edismax qf='subject content^10.0 flags' v=$qq}&qq=foo
-		   
-	/select?q=foo&ssq.query=flags
-		--> /select?q={!edismax qf='subject content flags^10.0' v=$qq}&qq=foo
-		   
-	/select?q=foo&ssq.query={!query ...}
-		--> /select?q={!query ...}&qq=foo   
+    								--> /select?q={!edismax qf='subject content^10.0 flags' v=$qq}&qq=foo
+	   
+    /select?q=foo&ssq.query=flags
+    								--> /select?q={!edismax qf='subject content flags^10.0' v=$qq}&qq=foo
+	   
+    /select?q=foo&ssq.query=subject
+    								--> /select?q={!edismax qf='subject^10.0 content flags' v=$qq}&qq=foo
+	   
+    /select?q=foo&ssq.query={!query ...}
+    								--> /select?q={!query ...}&qq=foo   
     ```
     
 The parameter name qq can optionally be changed to another arbitrary (valid parameter name) value via configuration of the parameter:
@@ -68,7 +71,7 @@ When the qq parameter (or the parameter defined in "ssq.param") is set in the qu
 (as qq parameter needs to be set to the query-terms for the query template to work).
 
 	/select?q=foo&qq=bar&ssq.query={!query ...}
-		--> /select?q=foo 
+    								--> /select?q=foo 
 
 To verify whether the ssq functionality was applied on your request, review the request parameters (via &echoParams=all) in the response. 
 The following (request) parameters will additionally be set when ssq functionality was applied:
